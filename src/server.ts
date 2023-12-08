@@ -1,7 +1,10 @@
+import { Server } from "http";
 import app from "./app";
 import mongoose from "mongoose";
 import config from "./app/config";
 const port = process.env.PORT || 7000;
+
+let server: Server;
 
 async function main() {
   try {
@@ -11,7 +14,7 @@ async function main() {
       }@cluster0.ehl62mb.mongodb.net/University-Of-Programming-Hero?retryWrites=true&w=majority`,
     );
 
-    app.listen(port, () => {
+    server = app.listen(port, () => {
       console.log(`http://localhost:${port}`);
     });
   } catch (error) {
@@ -20,3 +23,19 @@ async function main() {
 }
 
 main();
+
+process.on("unhandledRejection", () => {
+  console.log("unhandledRejection");
+
+  if (server) {
+    server.close(() => process.exit(1));
+  }
+
+  process.exit(1);
+});
+
+process.on("uncaughtException", () => {
+  console.log("uncaughtException");
+
+  process.exit(1);
+});
