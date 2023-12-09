@@ -4,16 +4,23 @@ import AppError from "../../errors/AppError";
 import httpStatus from "http-status";
 import User from "../user/user.model";
 import { TStudent } from "./student.interface";
-import { studentSearchableFields } from "./student.constant";
+import { excludeFields, studentSearchableFields } from "./student.constant";
 
 const getAllStudentsFromDB = async (query: Record<string, unknown>) => {
+  const queryObj = { ...query };
+
   const searchTerm = (query?.searchTerm as string) ?? "";
 
-  const result = await Student.find({
+  const searchQuery = Student.find({
     $or: studentSearchableFields.map((field) => ({
       [field]: { $regex: searchTerm, $options: "i" },
     })),
-  })
+  });
+
+  excludeFields.forEach((element) => delete queryObj[element]);
+
+  const result = await searchQuery
+    .find(queryObj)
     .populate("admissionSemester")
     .populate({
       path: "academicDepartment",
