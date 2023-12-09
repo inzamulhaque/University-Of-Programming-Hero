@@ -40,9 +40,15 @@ const getAllStudentsFromDB = async (query: Record<string, unknown>) => {
 
   const paginateQuery = sortQuery.skip(skip);
 
-  const limitQuery = await paginateQuery.limit(limit);
+  const limitQuery = paginateQuery.limit(limit);
 
-  return limitQuery;
+  const fields = query?.fields
+    ? (query?.fields as string).split(",").join(" ")
+    : "-__v";
+
+  const fieldLimitingQuery = await limitQuery.select(fields);
+
+  return fieldLimitingQuery;
 };
 
 const getSingleStudentFromDB = async (id: string) => {
