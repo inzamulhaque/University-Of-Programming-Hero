@@ -4,51 +4,29 @@ import AppError from "../../errors/AppError";
 import httpStatus from "http-status";
 import User from "../user/user.model";
 import { TStudent } from "./student.interface";
-import { excludeFields, studentSearchableFields } from "./student.constant";
+import { studentSearchableFields } from "./student.constant";
+import QueryBuilder from "../../builder/QueryBuilder";
 
 const getAllStudentsFromDB = async (query: Record<string, unknown>) => {
-  const queryObj = { ...query };
+  const studentQuery = new QueryBuilder(
+    Student.find()
+      .populate("admissionSemester")
+      .populate({
+        path: "academicDepartment",
+        populate: {
+          path: "academicFaculty",
+        },
+      }),
+    query,
+  )
+    .search(studentSearchableFields)
+    .filter()
+    .sort()
+    .paginate()
+    .fields();
 
-  const searchTerm = (query?.searchTerm as string) ?? "";
-
-  const searchQuery = Student.find({
-    $or: studentSearchableFields.map((field) => ({
-      [field]: { $regex: searchTerm, $options: "i" },
-    })),
-  });
-
-  excludeFields.forEach((element) => delete queryObj[element]);
-
-  const filterQuery = searchQuery
-    .find(queryObj)
-    .populate("admissionSemester")
-    .populate({
-      path: "academicDepartment",
-      populate: {
-        path: "academicFaculty",
-      },
-    });
-
-  const sort = (query?.sort as string) ?? "-createdAt";
-
-  const sortQuery = filterQuery.sort(sort);
-
-  const limit = Number(query?.limit) ?? 5;
-
-  const page = Number(query?.page) ?? 1;
-  const skip = (page - 1) * limit;
-
-  const paginateQuery = sortQuery.skip(skip);
-
-  const limitQuery = paginateQuery.limit(limit);
-
-  const fields = query?.fields
-    ? (query?.fields as string).split(",").join(" ")
-    : "-__v";
-
-  const fieldLimitingQuery = await limitQuery.select(fields);
-
-  return fieldLimitingQuery;
+  const result = await studentQuery.modelQuery;
+  return result;
 };
 
 const getSingleStudentFromDB = async (id: string) => {
