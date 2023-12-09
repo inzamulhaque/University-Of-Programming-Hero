@@ -4,9 +4,16 @@ import AppError from "../../errors/AppError";
 import httpStatus from "http-status";
 import User from "../user/user.model";
 import { TStudent } from "./student.interface";
+import { studentSearchableFields } from "./student.constant";
 
-const getAllStudentsFromDB = async () => {
-  const result = await Student.find()
+const getAllStudentsFromDB = async (query: Record<string, unknown>) => {
+  const searchTerm = (query?.searchTerm as string) ?? "";
+
+  const result = await Student.find({
+    $or: studentSearchableFields.map((field) => ({
+      [field]: { $regex: searchTerm, $options: "i" },
+    })),
+  })
     .populate("admissionSemester")
     .populate({
       path: "academicDepartment",
@@ -59,11 +66,12 @@ const deleteStudentFromDB = async (id: string) => {
     await session.endSession();
 
     return deletedStudent;
-  } catch (err) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  } catch (err: any) {
     await session.abortTransaction();
     await session.endSession();
 
-    throw new Error("Failed to delete student");
+    throw new Error(err);
   }
 };
 
