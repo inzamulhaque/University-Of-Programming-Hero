@@ -19,7 +19,7 @@ const getAllStudentsFromDB = async (query: Record<string, unknown>) => {
 
   excludeFields.forEach((element) => delete queryObj[element]);
 
-  const result = await searchQuery
+  const filterQuery = searchQuery
     .find(queryObj)
     .populate("admissionSemester")
     .populate({
@@ -29,7 +29,11 @@ const getAllStudentsFromDB = async (query: Record<string, unknown>) => {
       },
     });
 
-  return result;
+  const sort = (query?.sort as string) ?? "-createdAt";
+
+  const sortQuery = await filterQuery.sort(sort);
+
+  return sortQuery;
 };
 
 const getSingleStudentFromDB = async (id: string) => {
