@@ -35,7 +35,12 @@ const getAllStudentsFromDB = async (query: Record<string, unknown>) => {
 
   const limit = Number(query?.limit) ?? 5;
 
-  const limitQuery = await sortQuery.limit(limit);
+  const page = Number(query?.page) ?? 1;
+  const skip = (page - 1) * limit;
+
+  const paginateQuery = sortQuery.skip(skip);
+
+  const limitQuery = await paginateQuery.limit(limit);
 
   return limitQuery;
 };
