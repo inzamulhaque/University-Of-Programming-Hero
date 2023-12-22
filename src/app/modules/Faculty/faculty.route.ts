@@ -7,6 +7,8 @@ import {
   getSingleFaculty,
   updateFaculty,
 } from "./faculty.controller";
+import auth from "../../middlewares/auth";
+import { USER_ROLE } from "../user/user.constant";
 
 const router = express.Router();
 
@@ -20,6 +22,6 @@ router.patch(
 
 router.delete("/:id", deleteFaculty);
 
-router.get("/", getAllFaculties);
+router.get("/", auth(USER_ROLE.admin, USER_ROLE.faculty), getAllFaculties);
 
 export const FacultyRoutes = router;
