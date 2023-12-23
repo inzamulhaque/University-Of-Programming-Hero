@@ -1,4 +1,5 @@
 import {
+  changeStatusIntoDB,
   createAdminIntoDB,
   createFacultyIntoDB,
   createStudentIntoDB,
@@ -60,4 +61,17 @@ const getMe = catchAsync(async (req, res) => {
   });
 });
 
-export { createStudent, createFaculty, createAdmin, getMe };
+const changeStatus = catchAsync(async (req, res) => {
+  const id = req.params.id;
+
+  const result = await changeStatusIntoDB(id, req.body);
+
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: "Status is updated succesfully",
+    data: result,
+  });
+});
+
+export { createStudent, createFaculty, createAdmin, getMe, changeStatus };
