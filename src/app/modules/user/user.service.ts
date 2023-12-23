@@ -194,9 +194,13 @@ const getMeFromDB = async (userId: string, role: string) => {
 };
 
 const changeStatusIntoDB = async (id: string, payload: { status: string }) => {
-  const result = await User.findByIdAndUpdate(id, payload, {
-    new: true,
-  });
+  const result = await User.findByIdAndUpdate(
+    id,
+    { status: payload?.status },
+    {
+      new: true,
+    },
+  );
   return result;
 };
 
