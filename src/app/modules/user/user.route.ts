@@ -1,5 +1,10 @@
 import express from "express";
-import { createAdmin, createFaculty, createStudent } from "./user.controller";
+import {
+  createAdmin,
+  createFaculty,
+  createStudent,
+  getMe,
+} from "./user.controller";
 import validateRequest from "../../middlewares/validateRequest";
 import { CreateStudentValidationSchema } from "../student/student.validation";
 import { createFacultyValidationSchema } from "../Faculty/faculty.validation";
@@ -28,6 +33,12 @@ router.post(
   // auth(USER_ROLE.admin),
   validateRequest(createAdminValidationSchema),
   createAdmin,
+);
+
+router.get(
+  "/me",
+  auth(USER_ROLE.admin, USER_ROLE.faculty, USER_ROLE.student),
+  getMe,
 );
 
 export const UserRoutes = router;

@@ -2,6 +2,7 @@ import {
   createAdminIntoDB,
   createFacultyIntoDB,
   createStudentIntoDB,
+  getMeFromDB,
 } from "./user.service";
 import sendResponse from "../../utils/sendResponse";
 import httpStatus from "http-status";
@@ -46,4 +47,17 @@ const createAdmin = catchAsync(async (req, res) => {
   });
 });
 
-export { createStudent, createFaculty, createAdmin };
+const getMe = catchAsync(async (req, res) => {
+  const { userId, role } = req.user;
+
+  const result = await getMeFromDB(userId, role);
+
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: "User is retrieved succesfully",
+    data: result,
+  });
+});
+
+export { createStudent, createFaculty, createAdmin, getMe };

@@ -22,6 +22,7 @@ const createStudentIntoDB = async (password: string, payload: TStudent) => {
   const userData: Partial<TUser> = {};
   userData.password = password || (config.default_password as string);
   userData.role = "student";
+  userData.email = payload?.email;
 
   // find academic semester info
   const admissionSemester = await AcademicSemester.findById(
@@ -73,8 +74,11 @@ const createFacultyIntoDB = async (password: string, payload: TFaculty) => {
   //if password is not given , use deafult password
   userData.password = password || (config.default_password as string);
 
-  //set student role
+  //set faculty role
   userData.role = "faculty";
+
+  // set faculty email
+  userData.email = payload?.email;
 
   // find academic department info
   const academicDepartment = await AcademicDepartment.findById(
@@ -130,8 +134,11 @@ const createAdminIntoDB = async (password: string, payload: TFaculty) => {
   //if password is not given , use deafult password
   userData.password = password || (config.default_password as string);
 
-  //set student role
+  //set admin role
   userData.role = "admin";
+
+  // set admin email
+  userData.email = payload?.email;
 
   const session = await mongoose.startSession();
 
@@ -170,4 +177,25 @@ const createAdminIntoDB = async (password: string, payload: TFaculty) => {
   }
 };
 
-export { createStudentIntoDB, createFacultyIntoDB, createAdminIntoDB };
+const getMeFromDB = async (userId: string, role: string) => {
+  let result = null;
+  if (role === "student") {
+    result = await Student.findOne({ id: userId }).populate("user");
+  }
+  if (role === "admin") {
+    result = await Admin.findOne({ id: userId }).populate("user");
+  }
+
+  if (role === "faculty") {
+    result = await Faculty.findOne({ id: userId }).populate("user");
+  }
+
+  return result;
+};
+
+export {
+  createStudentIntoDB,
+  createFacultyIntoDB,
+  createAdminIntoDB,
+  getMeFromDB,
+};

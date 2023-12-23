@@ -2,10 +2,18 @@ import { Router } from "express";
 import validateRequest from "../../middlewares/validateRequest";
 import {
   changePasswordValidationSchema,
+  forgetPasswordValidationSchema,
   loginValidationSchema,
   refreshTokenValidationSchema,
+  resetPasswordValidationSchema,
 } from "./auth.validation";
-import { changePassword, loginUser, refreshToken } from "./auth.controller";
+import {
+  changePassword,
+  forgetPassword,
+  loginUser,
+  refreshToken,
+  resetPassword,
+} from "./auth.controller";
 import auth from "../../middlewares/auth";
 import { USER_ROLE } from "../user/user.constant";
 
@@ -24,6 +32,18 @@ router.post(
   "/refresh-token",
   validateRequest(refreshTokenValidationSchema),
   refreshToken,
+);
+
+router.post(
+  "/forget-password",
+  validateRequest(forgetPasswordValidationSchema),
+  forgetPassword,
+);
+
+router.post(
+  "/reset-password",
+  validateRequest(resetPasswordValidationSchema),
+  resetPassword,
 );
 
 export const AuthRoutes = router;
