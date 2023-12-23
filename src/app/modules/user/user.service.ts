@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import mongoose from "mongoose";
 import config from "../../config";
 import { TAcademicSemseter } from "../academicSemester/academicSemester.interface";
@@ -17,8 +18,13 @@ import { TFaculty } from "../Faculty/faculty.interface";
 import { AcademicDepartment } from "../academicDepartment/academicDepartment.model";
 import { Faculty } from "../Faculty/faculty.model";
 import Admin from "../Admin/admin.model";
+import { sendImageToCloudinary } from "../../utils/sendImageToCloudinary";
 
-const createStudentIntoDB = async (password: string, payload: TStudent) => {
+const createStudentIntoDB = async (
+  file: any,
+  password: string,
+  payload: TStudent,
+) => {
   const userData: Partial<TUser> = {};
   userData.password = password || (config.default_password as string);
   userData.role = "student";
@@ -38,6 +44,11 @@ const createStudentIntoDB = async (password: string, payload: TStudent) => {
       admissionSemester as TAcademicSemseter,
     );
 
+    //send image to cloudinary
+    const imageName = `${userData.id}-${payload?.name?.firstName}`;
+    const path = file?.path;
+    const { secure_url } = await sendImageToCloudinary(imageName, path);
+
     // create a user (transaction-1)
     const newUser = await User.create([userData], { session });
 
@@ -45,8 +56,10 @@ const createStudentIntoDB = async (password: string, payload: TStudent) => {
       throw new AppError(httpStatus.BAD_REQUEST, "Failed to create student");
     }
 
+    // set id , _id as user and profile image like
     payload.id = newUser[0].id;
     payload.user = newUser[0]._id;
+    payload.profileImg = secure_url;
 
     // create a student (transaction-2)
     const newStudent = await Student.create([payload], { session });
