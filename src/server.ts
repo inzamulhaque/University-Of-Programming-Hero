@@ -2,6 +2,7 @@ import { Server } from "http";
 import app from "./app";
 import mongoose from "mongoose";
 import config from "./app/config";
+import seedSuperAdmin from "./app/DB";
 const port = process.env.PORT || 7000;
 
 let server: Server;
@@ -13,6 +14,8 @@ async function main() {
         config.dbPassword as string
       }@cluster0.ehl62mb.mongodb.net/University-Of-Programming-Hero?retryWrites=true&w=majority`,
     );
+
+    seedSuperAdmin();
 
     server = app.listen(port, () => {
       console.log(`http://localhost:${port}`);

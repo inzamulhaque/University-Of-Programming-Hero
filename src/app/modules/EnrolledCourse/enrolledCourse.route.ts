@@ -7,6 +7,7 @@ import {
 } from "./enrolledCourse.validaton";
 import {
   createEnrolledCourse,
+  getMyEnrolledCourses,
   updateEnrolledCourseMarks,
 } from "./enrolledCourse.controller";
 import { USER_ROLE } from "../user/user.constant";
@@ -20,9 +21,15 @@ router.post(
   createEnrolledCourse,
 );
 
+router.get(
+  "/my-enrolled-course",
+  auth(USER_ROLE.student),
+  getMyEnrolledCourses,
+);
+
 router.patch(
   "/update-enrolled-course-marks",
-  auth(USER_ROLE.faculty),
+  auth(USER_ROLE.superAdmin, USER_ROLE.admin, USER_ROLE.faculty),
   validateRequest(updateEnrolledCourseMarksValidationZodSchema),
   updateEnrolledCourseMarks,
 );

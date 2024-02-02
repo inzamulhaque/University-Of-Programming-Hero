@@ -8,6 +8,7 @@ import {
   deleteOfferedCourseFromDB,
   getAllOfferedCoursesFromDB,
   getSingleOfferedCourseFromDB,
+  getMyOfferedCoursesFromDB,
 } from "./OfferedCourse.service";
 
 const createOfferedCourse = catchAsync(async (req: Request, res: Response) => {
@@ -22,6 +23,17 @@ const createOfferedCourse = catchAsync(async (req: Request, res: Response) => {
 
 const getAllOfferedCourses = catchAsync(async (req: Request, res: Response) => {
   const result = await getAllOfferedCoursesFromDB(req.query);
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: "OfferedCourses retrieved successfully !",
+    data: result,
+  });
+});
+
+const getMyOfferedCourses = catchAsync(async (req: Request, res: Response) => {
+  const { userId } = req.user;
+  const result = await getMyOfferedCoursesFromDB(userId, req.query);
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
@@ -69,6 +81,7 @@ const deleteOfferedCourse = catchAsync(async (req: Request, res: Response) => {
 export {
   createOfferedCourse,
   getAllOfferedCourses,
+  getMyOfferedCourses,
   getSingleOfferedCourses,
   updateOfferedCourse,
   deleteOfferedCourse,
