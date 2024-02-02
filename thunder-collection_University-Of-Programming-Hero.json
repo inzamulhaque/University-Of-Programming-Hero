@@ -1,0 +1,1094 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "University-Of-Programming-Hero",
+    "dateExported": "2024-02-02T22:35:08.404Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "f5dd95dc-0d8c-476d-8c41-785e9c9e3fea",
+            "name": "Students",
+            "containerId": "",
+            "created": "2023-11-29T16:33:06.713Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "3404f000-8666-4f9d-942d-8cf1cc658f99",
+            "name": "User",
+            "containerId": "",
+            "created": "2023-11-29T17:36:52.534Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "20f0dd16-d1c3-43fd-abab-404f540f1ece",
+            "name": "Academic Semester",
+            "containerId": "",
+            "created": "2023-12-02T10:11:43.299Z",
+            "sortNum": 30000
+        },
+        {
+            "_id": "6184503c-ef85-4e8d-88cc-dc56711d13dd",
+            "name": "Academic-Faculty",
+            "containerId": "",
+            "created": "2023-12-04T05:32:06.900Z",
+            "sortNum": 40000
+        },
+        {
+            "_id": "9590cd33-ef32-453a-8977-c48829cf5655",
+            "name": "Academic Department",
+            "containerId": "",
+            "created": "2023-12-04T14:08:21.249Z",
+            "sortNum": 50000
+        },
+        {
+            "_id": "28bc6116-73c1-4ca5-b260-6d2c7ccd4fd3",
+            "name": "Faculty",
+            "containerId": "",
+            "created": "2023-12-09T18:52:32.911Z",
+            "sortNum": 60000
+        },
+        {
+            "_id": "4f4fb1a7-32f7-4fc0-b4d2-5eb841691334",
+            "name": "Admin",
+            "containerId": "",
+            "created": "2023-12-10T05:43:09.453Z",
+            "sortNum": 70000
+        },
+        {
+            "_id": "68677c58-abbf-4e42-a82d-33341e91c56e",
+            "name": "Course",
+            "containerId": "",
+            "created": "2023-12-10T13:27:40.080Z",
+            "sortNum": 80000
+        },
+        {
+            "_id": "a160a19a-ff19-4505-8bff-db49053ae17f",
+            "name": "Semester Registration",
+            "containerId": "",
+            "created": "2023-12-15T18:53:01.255Z",
+            "sortNum": 90000
+        },
+        {
+            "_id": "6a0f188f-ef75-482e-a6f7-ace41a4d7a8e",
+            "name": "Offered-Course",
+            "containerId": "",
+            "created": "2023-12-17T19:40:51.480Z",
+            "sortNum": 100000
+        },
+        {
+            "_id": "00cbc85c-fe16-4b7b-bf38-83c4bbf9a949",
+            "name": "Auth",
+            "containerId": "",
+            "created": "2023-12-19T18:44:50.973Z",
+            "sortNum": 110000
+        },
+        {
+            "_id": "04cb3e57-f2c9-4fa1-9c45-9b407326d909",
+            "name": "Enrolled Courses",
+            "containerId": "",
+            "created": "2023-12-24T18:20:34.232Z",
+            "sortNum": 120000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "e6ae9d3a-2f48-4d2c-b50a-c0c433cc5090",
+            "colId": "910cf891-f144-4c9f-8895-4442cdbd970e",
+            "containerId": "3404f000-8666-4f9d-942d-8cf1cc658f99",
+            "name": "create new student",
+            "url": "http://localhost:7000/api/v1/users/create-student",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-11-29T16:33:14.267Z",
+            "modified": "2024-01-30T20:37:06.548Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIwMDAxIiwicm9sZSI6InN1cGVyQWRtaW4iLCJpYXQiOjE3MDY2NDE4MzQsImV4cCI6MTcwNjcyODIzNH0.5inwzTlaPp26rI1g8j-XYUBqME2LVfAfTCoqcaSLUhg"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "data",
+                        "value": "{ \"password\": \"123456\", \"student\": { \"name\": { \"firstName\": \"Sarah\", \"middleName\": \"Grace\", \"lastName\": \"Wilson\" }, \"gender\": \"female\", \"dateOfBirth\": \"2005-12-03\", \"email\": \"sarah3513.wilson2@example.com\", \"contactNo\": \"333-444-5555\", \"emergencyContactNo\": \"222-333-4444\", \"bloodGroup\": \"A-\", \"presentAddress\": \"123 Elm Street, Hilltop, State\", \"permanentAddress\": \"789 Oak Avenue, Mountaintop, State\", \"guardian\": { \"fatherName\": \"David Wilson\", \"fatherOccupation\": \"Lawyer\", \"fatherContactNo\": \"777-888-9999\", \"motherName\": \"Olivia Wilson\", \"motherOccupation\": \"Architect\", \"motherContactNo\": \"333-222-1111\" }, \"localGuardian\": { \"name\": \"Noah Brown\", \"occupation\": \"Engineer\", \"contactNo\": \"777-666-5555\", \"address\": \"456 Pine Street, Uptown, State\" }, \"profileImg\": \"https://example.com/profiles/sarah_wilson.jpg\", \"admissionSemester\": \"65b949dd0fb41b9300692dda\", \"academicDepartment\": \"65b9474836e64d2b599d9e32\" } }"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "63f9334b-699a-4754-9a09-164623886b23",
+            "colId": "910cf891-f144-4c9f-8895-4442cdbd970e",
+            "containerId": "6a0f188f-ef75-482e-a6f7-ace41a4d7a8e",
+            "name": "create Offered-Course",
+            "url": "{{ph-local-url}}/offered-courses/create-offered-course",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-12-17T19:38:19.962Z",
+            "modified": "2024-02-01T22:11:56.267Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIwMDAxIiwicm9sZSI6InN1cGVyQWRtaW4iLCJpYXQiOjE3MDY4MjQ5NTMsImV4cCI6MTcwNjkxMTM1M30.pxc37qJl5dkd-GJtNEdYNfsI98lBR84qxAHK6dIhDBA"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"semesterRegistration\": \"65bbf418896fa66fc299ef59\",\n  \"academicFaculty\": \"65b945b68f7725646e6b24df\",\n  \"academicDepartment\": \"65b9474836e64d2b599d9e32\",\n  \"course\": \"65bbefa22ccadca56da0eb25\",\n  \"faculty\": \"65bc015407e5e2582439f31b\",\n  \"maxCapacity\": 30,\n  \"section\": 1,\n  \"days\": [\"Mon\", \"Wed\"],\n  \"startTime\": \"10:30\",\n  \"endTime\": \"12:00\"\n}\n",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "d7f4f285-8c65-4088-b37d-9fe208d065b5",
+            "colId": "910cf891-f144-4c9f-8895-4442cdbd970e",
+            "containerId": "f5dd95dc-0d8c-476d-8c41-785e9c9e3fea",
+            "name": "get all students",
+            "url": "http://localhost:7000/api/v1/students",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-11-29T16:33:25.339Z",
+            "modified": "2023-12-09T14:05:04.759Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "bc1946ab-9c62-4e7b-91b4-c0736b51363f",
+            "colId": "910cf891-f144-4c9f-8895-4442cdbd970e",
+            "containerId": "6a0f188f-ef75-482e-a6f7-ace41a4d7a8e",
+            "name": "update Offered-Course",
+            "url": "{{ph-local-url}}/offered-courses/658090e7d282bc811d92ffc8",
+            "method": "PATCH",
+            "sortNum": 20000,
+            "created": "2023-12-18T19:24:17.916Z",
+            "modified": "2023-12-18T19:27:45.637Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \n  \"faculty\": \"65808f14d282bc811d92ff9a\",\n  \"maxCapacity\": 35,\n  \"days\": [\"Mon\", \"Wed\", \"Fri\"],\n  \"startTime\": \"11:00\",\n  \"endTime\": \"13:00\"\n}\n",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "f6596311-a75a-47e3-9fa1-aa67254ddcb9",
+            "colId": "910cf891-f144-4c9f-8895-4442cdbd970e",
+            "containerId": "f5dd95dc-0d8c-476d-8c41-785e9c9e3fea",
+            "name": "get students using query",
+            "url": "http://localhost:7000/api/v1/students?sort=-id",
+            "method": "GET",
+            "sortNum": 25000,
+            "created": "2023-12-09T10:21:21.542Z",
+            "modified": "2023-12-09T17:53:22.911Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "searchTerm",
+                    "value": "rah",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "email",
+                    "value": "sarah.wilson@example.com",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "sort",
+                    "value": "-id",
+                    "isPath": false
+                },
+                {
+                    "name": "limit",
+                    "value": "2",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "page",
+                    "value": "2",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "fields",
+                    "value": "name,email,-_id",
+                    "isDisabled": true,
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "6e38e325-fbba-417a-a013-760ed8a3ba0f",
+            "colId": "910cf891-f144-4c9f-8895-4442cdbd970e",
+            "containerId": "f5dd95dc-0d8c-476d-8c41-785e9c9e3fea",
+            "name": "get single student",
+            "url": "http://localhost:7000/api/v1/students/1378901",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-11-29T16:33:33.635Z",
+            "modified": "2023-11-29T16:33:33.635Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "f24e6b47-46f9-4696-b2de-3613c34b6610",
+            "colId": "910cf891-f144-4c9f-8895-4442cdbd970e",
+            "containerId": "f5dd95dc-0d8c-476d-8c41-785e9c9e3fea",
+            "name": "delete student",
+            "url": "http://localhost:7000/api/v1/students/2024030001",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2023-11-29T16:33:37.964Z",
+            "modified": "2023-12-06T17:59:15.768Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "bf41a9a5-8178-4359-8452-21dfbf0acd23",
+            "colId": "910cf891-f144-4c9f-8895-4442cdbd970e",
+            "containerId": "20f0dd16-d1c3-43fd-abab-404f540f1ece",
+            "name": "create semester",
+            "url": "http://localhost:7000/api/v1/academic-semesters/create-academic-semester/",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2023-12-02T10:12:26.748Z",
+            "modified": "2024-01-30T19:13:29.620Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIwMDAxIiwicm9sZSI6InN1cGVyQWRtaW4iLCJpYXQiOjE3MDY2NDE4MzQsImV4cCI6MTcwNjcyODIzNH0.5inwzTlaPp26rI1g8j-XYUBqME2LVfAfTCoqcaSLUhg"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Fall\",\n  \"year\": \"2024\",\n  \"code\": \"03\",\n  \"startMonth\": \"September\",\n  \"endMonth\": \"December\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "0d9ee33d-d8c1-4b91-9a0a-02293dfd6252",
+            "colId": "910cf891-f144-4c9f-8895-4442cdbd970e",
+            "containerId": "6184503c-ef85-4e8d-88cc-dc56711d13dd",
+            "name": "Create Academic Faculty",
+            "url": "{{ph-local-url}}/academic-faculties/create-academic-faculty",
+            "method": "POST",
+            "sortNum": 60000,
+            "created": "2023-12-04T05:38:20.922Z",
+            "modified": "2024-01-30T18:53:42.245Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIwMDAxIiwicm9sZSI6InN1cGVyQWRtaW4iLCJpYXQiOjE3MDY2NDA3NDcsImV4cCI6MTcwNjY0MTM0N30.V8a8EUV6agWRA0eJDfD7AWyFcsHiEmHw5A1ejXHD1oQ"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Faculty of Web Development\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "73cd5bca-ad96-4dde-8f4c-9dcbf8a3a7b3",
+            "colId": "910cf891-f144-4c9f-8895-4442cdbd970e",
+            "containerId": "6184503c-ef85-4e8d-88cc-dc56711d13dd",
+            "name": "Get All Academic Faculty",
+            "url": "{{ph-local-url}}/academic-faculties/",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2023-12-04T05:48:59.469Z",
+            "modified": "2023-12-04T05:49:24.574Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "58c8d8fd-6941-4b6f-a8e5-08faefb99114",
+            "colId": "910cf891-f144-4c9f-8895-4442cdbd970e",
+            "containerId": "6184503c-ef85-4e8d-88cc-dc56711d13dd",
+            "name": "Get Signle Academic Faculty",
+            "url": "{{ph-local-url}}/academic-faculties/656d677e49bc192b37f34c95",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2023-12-04T05:51:33.524Z",
+            "modified": "2023-12-04T05:51:55.253Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "613cbeba-34ab-4b9d-b8cb-e359ef1d4280",
+            "colId": "910cf891-f144-4c9f-8895-4442cdbd970e",
+            "containerId": "6184503c-ef85-4e8d-88cc-dc56711d13dd",
+            "name": "Update Academic Faculty",
+            "url": "{{ph-local-url}}/academic-faculties/656d677e49bc192b37f34c95",
+            "method": "PATCH",
+            "sortNum": 90000,
+            "created": "2023-12-04T05:58:20.028Z",
+            "modified": "2023-12-04T06:00:48.391Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Faculty of Engineering and Technology\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "542c4917-d9f2-454f-b339-a80fcc697710",
+            "colId": "910cf891-f144-4c9f-8895-4442cdbd970e",
+            "containerId": "9590cd33-ef32-453a-8977-c48829cf5655",
+            "name": "Create Academic Department",
+            "url": "{{ph-local-url}}/academic-departments/create-academic-department/",
+            "method": "POST",
+            "sortNum": 100000,
+            "created": "2023-12-04T14:08:44.455Z",
+            "modified": "2024-01-30T19:00:25.143Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIwMDAxIiwicm9sZSI6InN1cGVyQWRtaW4iLCJpYXQiOjE3MDY2NDEwMDgsImV4cCI6MTcwNjY0MTYwOH0.VmmncZ3M9SqWYI-Au-36or3FDEek5pXN6VaPAPcEhKc"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Department of Complete Web Development Course With Jhankar Mahbub\",\n  \"academicFaculty\": \"65b945b68f7725646e6b24df\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "642d1a34-a42e-4e76-bb37-c5ca16d8fd36",
+            "colId": "910cf891-f144-4c9f-8895-4442cdbd970e",
+            "containerId": "9590cd33-ef32-453a-8977-c48829cf5655",
+            "name": "Get All Academic Department",
+            "url": "{{ph-local-url}}/academic-departments/",
+            "method": "GET",
+            "sortNum": 110000,
+            "created": "2023-12-04T14:17:27.908Z",
+            "modified": "2023-12-04T14:17:41.849Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "6308a733-f5d1-408b-a524-f7185fbb8815",
+            "colId": "910cf891-f144-4c9f-8895-4442cdbd970e",
+            "containerId": "9590cd33-ef32-453a-8977-c48829cf5655",
+            "name": "Get Single Academic Department",
+            "url": "{{ph-local-url}}/academic-departments/656ddeb966153743be943a50",
+            "method": "GET",
+            "sortNum": 120000,
+            "created": "2023-12-04T14:18:40.066Z",
+            "modified": "2023-12-08T19:45:31.739Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "a67f1a75-33b1-4c3c-8db7-2e42fd8a4b47",
+            "colId": "910cf891-f144-4c9f-8895-4442cdbd970e",
+            "containerId": "9590cd33-ef32-453a-8977-c48829cf5655",
+            "name": "Update Academic Department",
+            "url": "{{ph-local-url}}/academic-departments/656ddeb966153743be943a50",
+            "method": "PATCH",
+            "sortNum": 130000,
+            "created": "2023-12-04T14:19:48.419Z",
+            "modified": "2023-12-04T14:20:49.654Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Department of Computer Science and Engineering\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "0ac363d2-83d6-41fc-a2a8-46e5953b2e55",
+            "colId": "910cf891-f144-4c9f-8895-4442cdbd970e",
+            "containerId": "f5dd95dc-0d8c-476d-8c41-785e9c9e3fea",
+            "name": "update student",
+            "url": "http://localhost:7000/api/v1/students/2024030001",
+            "method": "PATCH",
+            "sortNum": 140000,
+            "created": "2023-12-06T19:37:05.264Z",
+            "modified": "2023-12-06T19:39:08.309Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"student\": {\n    \"name\": {\n      \"lastName\": \"John\"\n    }\n  }\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "9adaadeb-a9d3-4cef-9d27-461c5445db72",
+            "colId": "910cf891-f144-4c9f-8895-4442cdbd970e",
+            "containerId": "3404f000-8666-4f9d-942d-8cf1cc658f99",
+            "name": "create new faculty",
+            "url": "http://localhost:7000/api/v1/users/create-faculty/",
+            "method": "POST",
+            "sortNum": 150000,
+            "created": "2023-12-09T18:39:17.459Z",
+            "modified": "2024-02-01T20:38:44.511Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIwMDAxIiwicm9sZSI6InN1cGVyQWRtaW4iLCJpYXQiOjE3MDY4MTM0ODUsImV4cCI6MTcwNjg5OTg4NX0.7_tq32zG9BQsuBSdDHdB6Hm9kKkIczp-EYG6YHYN7p4"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"password\": \"123456\",\n  \"faculty\": {\n    \"designation\": \"Associate Professor\",\n    \"name\": {\n      \"firstName\": \"Emma\",\n      \"middleName\": \"Grace\",\n      \"lastName\": \"Wilson\"\n    },\n    \"gender\": \"female\",\n    \"dateOfBirth\": \"1976-12-10\",\n    \"email\": \"emma2.wilson2@example.com\",\n    \"contactNo\": \"345-678-9012\",\n    \"emergencyContactNo\": \"765-432-1098\",\n    \"presentAddress\": \"567 Oak Street, Countyville, State\",\n    \"permanentAddress\": \"876 Maple Avenue, Cityton, State\",\n    \"academicDepartment\": \"65b9474836e64d2b599d9e32\",\n    \"bloodGroup\": \"AB+\"\n  }\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "6104a592-3e06-4d90-89a9-4071e5e90853",
+            "colId": "910cf891-f144-4c9f-8895-4442cdbd970e",
+            "containerId": "28bc6116-73c1-4ca5-b260-6d2c7ccd4fd3",
+            "name": "get all faculties",
+            "url": "{{ph-local-url}}/faculties/",
+            "method": "GET",
+            "sortNum": 160000,
+            "created": "2023-12-09T18:52:49.241Z",
+            "modified": "2023-12-24T18:28:27.670Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJBLTAwMDEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MDM0NDI0OTgsImV4cCI6MTcwMzQ0MzA5OH0.ljwFKrx3k13DFv3fiNUh79rQAFyR-Ior5T-PhU8gnzo"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "85246661-a2ed-4e9b-8e05-aab9bbe79216",
+            "colId": "910cf891-f144-4c9f-8895-4442cdbd970e",
+            "containerId": "28bc6116-73c1-4ca5-b260-6d2c7ccd4fd3",
+            "name": "get faculty by id",
+            "url": "{{ph-local-url}}/faculties/6574b72846756c2a077985e8",
+            "method": "GET",
+            "sortNum": 170000,
+            "created": "2023-12-09T18:53:49.176Z",
+            "modified": "2023-12-09T18:55:03.349Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "e94b6bce-12ef-4572-afc8-c2c9420714cb",
+            "colId": "910cf891-f144-4c9f-8895-4442cdbd970e",
+            "containerId": "00cbc85c-fe16-4b7b-bf38-83c4bbf9a949",
+            "name": "Login Super Admin",
+            "url": "{{ph-local-url}}/auth/login",
+            "method": "POST",
+            "sortNum": 175000,
+            "created": "2024-01-30T18:41:42.376Z",
+            "modified": "2024-01-30T18:42:09.211Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"id\":\"0001\",\n  \"password\": \"123456\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "ee86e90d-d067-4a22-8069-5ca7b1bca5f0",
+            "colId": "910cf891-f144-4c9f-8895-4442cdbd970e",
+            "containerId": "28bc6116-73c1-4ca5-b260-6d2c7ccd4fd3",
+            "name": "update gaculty by id",
+            "url": "{{ph-local-url}}/faculties/6574b72846756c2a077985e8",
+            "method": "PATCH",
+            "sortNum": 180000,
+            "created": "2023-12-09T18:56:11.965Z",
+            "modified": "2023-12-09T18:57:47.229Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"faculty\": {\n    \"name\": {\n      \"middleName\": \"Dec\"\n    }\n  }\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "40b4e359-5646-4617-adad-977dd6589907",
+            "colId": "910cf891-f144-4c9f-8895-4442cdbd970e",
+            "containerId": "3404f000-8666-4f9d-942d-8cf1cc658f99",
+            "name": "create new admin",
+            "url": "http://localhost:7000/api/v1/users/create-admin/",
+            "method": "POST",
+            "sortNum": 190000,
+            "created": "2023-12-10T05:35:56.052Z",
+            "modified": "2024-02-01T18:51:55.074Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIwMDAxIiwicm9sZSI6InN1cGVyQWRtaW4iLCJpYXQiOjE3MDY4MTM0ODUsImV4cCI6MTcwNjg5OTg4NX0.7_tq32zG9BQsuBSdDHdB6Hm9kKkIczp-EYG6YHYN7p4"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"password\": \"123456\",\n  \"admin\": {\n    \"designation\": \"admin\",\n    \"name\": {\n      \"firstName\": \"Sophia\",\n      \"middleName\": \"Anne\",\n      \"lastName\": \"Smith\"\n    },\n    \"gender\": \"female\",\n    \"dateOfBirth\": \"1982-12-10\",\n    \"email\": \"sophia.smith12@example.com\",\n    \"contactNo\": \"345-678-9012\",\n    \"emergencyContactNo\": \"765-432-1098\",\n    \"bloodGroup\": \"A+\",\n    \"presentAddress\": \"567 Oak Street, Countyville, State\",\n    \"permanentAddress\": \"876 Maple Avenue, Cityton, State\"\n  }\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "efc91c2f-08e4-4e47-81da-dc38e2908406",
+            "colId": "910cf891-f144-4c9f-8895-4442cdbd970e",
+            "containerId": "4f4fb1a7-32f7-4fc0-b4d2-5eb841691334",
+            "name": "get all admin",
+            "url": "{{ph-local-url}}/admins/",
+            "method": "GET",
+            "sortNum": 200000,
+            "created": "2023-12-10T05:43:20.425Z",
+            "modified": "2023-12-10T05:43:51.386Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "2e46a8e9-4159-4871-9028-3b68ec2acda9",
+            "colId": "910cf891-f144-4c9f-8895-4442cdbd970e",
+            "containerId": "4f4fb1a7-32f7-4fc0-b4d2-5eb841691334",
+            "name": "get admin by id",
+            "url": "{{ph-local-url}}/admins/65754f5501c8f22b928f69ce",
+            "method": "GET",
+            "sortNum": 210000,
+            "created": "2023-12-10T05:47:04.039Z",
+            "modified": "2023-12-10T05:47:17.131Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "14c283a4-7ac1-4750-85f9-c89ab23a2ce0",
+            "colId": "910cf891-f144-4c9f-8895-4442cdbd970e",
+            "containerId": "68677c58-abbf-4e42-a82d-33341e91c56e",
+            "name": "create new course",
+            "url": "{{ph-local-url}}/courses/create-course",
+            "method": "POST",
+            "sortNum": 220000,
+            "created": "2023-12-10T13:27:53.263Z",
+            "modified": "2024-02-01T19:25:15.676Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIwMDAxIiwicm9sZSI6InN1cGVyQWRtaW4iLCJpYXQiOjE3MDY4MTM0ODUsImV4cCI6MTcwNjg5OTg4NX0.7_tq32zG9BQsuBSdDHdB6Hm9kKkIczp-EYG6YHYN7p4"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"Dom Manipulation\",\n  \"prefix\": \"JS\",\n  \"code\": 108,\n  \"credits\": 3,\n  \"isDeleted\": false,\n  \"preRequisiteCourses\": [\n    {\n      \"course\": \"65bbefa22ccadca56da0eb25\",\n      \"isDeleted\": false\n    },\n    {\n      \"course\": \"65bbef472ccadca56da0eb1e\",\n      \"isDeleted\": false\n    }\n  ]\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "2d5913c2-b7c2-4ba3-aca4-94372c64c836",
+            "colId": "910cf891-f144-4c9f-8895-4442cdbd970e",
+            "containerId": "68677c58-abbf-4e42-a82d-33341e91c56e",
+            "name": "get all courses",
+            "url": "{{ph-local-url}}/courses/",
+            "method": "GET",
+            "sortNum": 230000,
+            "created": "2023-12-10T13:32:41.888Z",
+            "modified": "2023-12-10T13:32:53.356Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "2a9ee531-2ab6-458f-af09-48d3626764a3",
+            "colId": "910cf891-f144-4c9f-8895-4442cdbd970e",
+            "containerId": "68677c58-abbf-4e42-a82d-33341e91c56e",
+            "name": "get course by id",
+            "url": "{{ph-local-url}}/courses/6575bed59e123c035be97512",
+            "method": "GET",
+            "sortNum": 240000,
+            "created": "2023-12-10T13:49:13.931Z",
+            "modified": "2023-12-10T18:21:10.026Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "989fa4c6-3d03-4d0b-ae13-5ff54757d361",
+            "colId": "910cf891-f144-4c9f-8895-4442cdbd970e",
+            "containerId": "68677c58-abbf-4e42-a82d-33341e91c56e",
+            "name": "delete course by id",
+            "url": "{{ph-local-url}}/courses/6575bed59e123c035be97512",
+            "method": "DELETE",
+            "sortNum": 250000,
+            "created": "2023-12-10T13:51:58.493Z",
+            "modified": "2023-12-10T13:52:25.985Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "684d578f-80b5-4ea8-933d-4fa4578d8c17",
+            "colId": "910cf891-f144-4c9f-8895-4442cdbd970e",
+            "containerId": "68677c58-abbf-4e42-a82d-33341e91c56e",
+            "name": "update course by id",
+            "url": "{{ph-local-url}}/courses/6575bed59e123c035be97512",
+            "method": "PATCH",
+            "sortNum": 260000,
+            "created": "2023-12-10T17:47:53.532Z",
+            "modified": "2023-12-10T19:37:57.838Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"preRequisiteCourses\": [\n    {\n      \"course\": \"6575bddf9e123c035be97509\",\n      \"isDeleted\": false\n    }\n  ]\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "c0f5a5d9-a292-4dca-9a80-06a810cadec7",
+            "colId": "910cf891-f144-4c9f-8895-4442cdbd970e",
+            "containerId": "68677c58-abbf-4e42-a82d-33341e91c56e",
+            "name": "assign faculty",
+            "url": "{{ph-local-url}}/courses/65bbf01b2ccadca56da0eb29/assign-faculties/",
+            "method": "PUT",
+            "sortNum": 270000,
+            "created": "2023-12-10T20:11:27.808Z",
+            "modified": "2024-02-01T22:06:12.680Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIwMDAxIiwicm9sZSI6InN1cGVyQWRtaW4iLCJpYXQiOjE3MDY4MTM0ODUsImV4cCI6MTcwNjg5OTg4NX0.7_tq32zG9BQsuBSdDHdB6Hm9kKkIczp-EYG6YHYN7p4"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"faculties\": [\n    \"65ba966b2df9fb61cee2dc22\",\n    \"65bc015407e5e2582439f31b\"\n  ]\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "6524050c-0813-434f-a4e9-52899e3061ae",
+            "colId": "910cf891-f144-4c9f-8895-4442cdbd970e",
+            "containerId": "68677c58-abbf-4e42-a82d-33341e91c56e",
+            "name": "get faculty with course",
+            "url": "{{ph-local-url}}/courses/65bbede42ccadca56da0eb12/get-faculties/",
+            "method": "GET",
+            "sortNum": 275000,
+            "created": "2024-02-01T20:55:07.067Z",
+            "modified": "2024-02-01T20:56:17.152Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIwMDAxIiwicm9sZSI6InN1cGVyQWRtaW4iLCJpYXQiOjE3MDY4MTM0ODUsImV4cCI6MTcwNjg5OTg4NX0.7_tq32zG9BQsuBSdDHdB6Hm9kKkIczp-EYG6YHYN7p4"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "430b8371-8171-45ad-9f86-126c279d143e",
+            "colId": "910cf891-f144-4c9f-8895-4442cdbd970e",
+            "containerId": "68677c58-abbf-4e42-a82d-33341e91c56e",
+            "name": "delete faculty from course",
+            "url": "{{ph-local-url}}/courses/6575bddf9e123c035be97509/remove-faculties",
+            "method": "DELETE",
+            "sortNum": 280000,
+            "created": "2023-12-10T20:29:16.454Z",
+            "modified": "2023-12-10T20:30:09.485Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"faculties\": [\n    \"6574b74246756c2a077985ef\"\n  ]\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "fd25b64a-fb93-4f38-b1e0-2b9ff6a64186",
+            "colId": "910cf891-f144-4c9f-8895-4442cdbd970e",
+            "containerId": "20f0dd16-d1c3-43fd-abab-404f540f1ece",
+            "name": "get all semester",
+            "url": "http://localhost:7000/api/v1/academic-semesters/",
+            "method": "GET",
+            "sortNum": 290000,
+            "created": "2023-12-15T18:53:42.690Z",
+            "modified": "2023-12-15T18:53:57.879Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "6604ac2d-b1c5-4f71-ba31-a3655a73b9ec",
+            "colId": "910cf891-f144-4c9f-8895-4442cdbd970e",
+            "containerId": "a160a19a-ff19-4505-8bff-db49053ae17f",
+            "name": "create semester registration",
+            "url": "{{ph-local-url}}/semester-registrations/create-semester-registration/",
+            "method": "POST",
+            "sortNum": 310000,
+            "created": "2023-12-15T18:55:12.038Z",
+            "modified": "2024-02-01T19:42:16.844Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIwMDAxIiwicm9sZSI6InN1cGVyQWRtaW4iLCJpYXQiOjE3MDY4MTM0ODUsImV4cCI6MTcwNjg5OTg4NX0.7_tq32zG9BQsuBSdDHdB6Hm9kKkIczp-EYG6YHYN7p4"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"academicSemester\": \"65b949dd0fb41b9300692dda\",\n  \"status\": \"UPCOMING\",\n  \"startDate\": \"2025-01-10T00:00:00.000Z\",\n  \"endDate\": \"2025-04-24T00:00:00.000Z\",\n  \"minCredit\": 6,\n  \"maxCredit\": 15\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "6345094c-9850-4feb-9994-99ea97c33182",
+            "colId": "910cf891-f144-4c9f-8895-4442cdbd970e",
+            "containerId": "a160a19a-ff19-4505-8bff-db49053ae17f",
+            "name": "get all semester registration",
+            "url": "{{ph-local-url}}/semester-registrations/",
+            "method": "GET",
+            "sortNum": 320000,
+            "created": "2023-12-16T17:52:00.455Z",
+            "modified": "2024-02-01T19:48:23.472Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIwMDAxIiwicm9sZSI6InN1cGVyQWRtaW4iLCJpYXQiOjE3MDY4MTM0ODUsImV4cCI6MTcwNjg5OTg4NX0.7_tq32zG9BQsuBSdDHdB6Hm9kKkIczp-EYG6YHYN7p4"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "69b4e187-5bf3-4d86-b3b5-d91cda606667",
+            "colId": "910cf891-f144-4c9f-8895-4442cdbd970e",
+            "containerId": "a160a19a-ff19-4505-8bff-db49053ae17f",
+            "name": "get single semester registration",
+            "url": "{{ph-local-url}}/semester-registrations/657de39df3749e8a7dcb63f6",
+            "method": "GET",
+            "sortNum": 330000,
+            "created": "2023-12-16T17:52:55.261Z",
+            "modified": "2023-12-16T17:53:26.737Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "02da43de-20c4-4513-ba8f-0db893ecef25",
+            "colId": "910cf891-f144-4c9f-8895-4442cdbd970e",
+            "containerId": "a160a19a-ff19-4505-8bff-db49053ae17f",
+            "name": "update semester registration",
+            "url": "{{ph-local-url}}/semester-registrations/65bbf418896fa66fc299ef59",
+            "method": "PATCH",
+            "sortNum": 340000,
+            "created": "2023-12-16T18:47:01.203Z",
+            "modified": "2024-02-01T19:48:57.873Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIwMDAxIiwicm9sZSI6InN1cGVyQWRtaW4iLCJpYXQiOjE3MDY4MTM0ODUsImV4cCI6MTcwNjg5OTg4NX0.7_tq32zG9BQsuBSdDHdB6Hm9kKkIczp-EYG6YHYN7p4"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"status\": \"ONGOING\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "fab88f4a-84c2-4d86-a25b-276866e16155",
+            "colId": "910cf891-f144-4c9f-8895-4442cdbd970e",
+            "containerId": "00cbc85c-fe16-4b7b-bf38-83c4bbf9a949",
+            "name": "Login Admin",
+            "url": "{{ph-local-url}}/auth/login",
+            "method": "POST",
+            "sortNum": 350000,
+            "created": "2023-12-19T18:45:05.260Z",
+            "modified": "2023-12-22T19:16:39.482Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"id\":\"A-0001\",\n  \"password\": \"123456\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "7ac269e7-3f19-4362-b5c3-c39af93daa81",
+            "colId": "910cf891-f144-4c9f-8895-4442cdbd970e",
+            "containerId": "00cbc85c-fe16-4b7b-bf38-83c4bbf9a949",
+            "name": "Login Faculty",
+            "url": "{{ph-local-url}}/auth/login",
+            "method": "POST",
+            "sortNum": 355000,
+            "created": "2023-12-25T10:46:30.768Z",
+            "modified": "2023-12-25T10:47:00.264Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"id\":\"F-0001\",\n  \"password\": \"123456\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "f8d0f7e4-7fda-4c8c-bb10-17ff7192ddeb",
+            "colId": "910cf891-f144-4c9f-8895-4442cdbd970e",
+            "containerId": "00cbc85c-fe16-4b7b-bf38-83c4bbf9a949",
+            "name": "Login Student",
+            "url": "{{ph-local-url}}/auth/login",
+            "method": "POST",
+            "sortNum": 360000,
+            "created": "2023-12-21T17:17:06.834Z",
+            "modified": "2023-12-23T19:46:32.324Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"id\":\"2024010001\",\n  \"password\": \"123456\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "a93d5cbc-3f20-4e1b-95b9-9b1620538f44",
+            "colId": "910cf891-f144-4c9f-8895-4442cdbd970e",
+            "containerId": "00cbc85c-fe16-4b7b-bf38-83c4bbf9a949",
+            "name": "Change Password",
+            "url": "{{ph-local-url}}/auth/change-password/",
+            "method": "POST",
+            "sortNum": 360000,
+            "created": "2023-12-21T18:59:38.213Z",
+            "modified": "2023-12-22T19:22:30.223Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJBLTAwMDEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MDMyNzI1OTksImV4cCI6MTcwMzI3MzE5OX0.t5YlmgfB_ZYocpq50ionKiobOmlenkCtuuR26eOu1H4"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"oldPassword\": \"123456\",\n  \"newPassword\": \"123456\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "e3d3e335-107a-412e-9b7a-203dea080885",
+            "colId": "910cf891-f144-4c9f-8895-4442cdbd970e",
+            "containerId": "00cbc85c-fe16-4b7b-bf38-83c4bbf9a949",
+            "name": "Refresh Token",
+            "url": "{{ph-local-url}}/auth/refresh-token",
+            "method": "POST",
+            "sortNum": 370000,
+            "created": "2023-12-22T18:11:18.058Z",
+            "modified": "2023-12-22T18:11:41.412Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "7008a16e-e2db-42d7-97d0-216f7fa1bd3a",
+            "colId": "910cf891-f144-4c9f-8895-4442cdbd970e",
+            "containerId": "00cbc85c-fe16-4b7b-bf38-83c4bbf9a949",
+            "name": "Forget Password",
+            "url": "{{ph-local-url}}/auth/forget-password",
+            "method": "POST",
+            "sortNum": 380000,
+            "created": "2023-12-22T18:59:01.710Z",
+            "modified": "2023-12-22T19:44:15.490Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"id\": \"A-0001\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "72b29517-2517-44f1-ab2d-52e7c6a3d588",
+            "colId": "910cf891-f144-4c9f-8895-4442cdbd970e",
+            "containerId": "00cbc85c-fe16-4b7b-bf38-83c4bbf9a949",
+            "name": "Reset Password",
+            "url": "{{ph-local-url}}/auth/reset-password",
+            "method": "POST",
+            "sortNum": 390000,
+            "created": "2023-12-23T18:09:59.255Z",
+            "modified": "2023-12-23T18:27:39.997Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJBLTAwMDEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MDMzNTYwMjUsImV4cCI6MTcwMzM1NjYyNX0.bWAZlx0SlkJ11ZqDQ67f32PJAqS6HIRPcPqMNbX26mQ"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"id\": \"A-0001\",\n  \"newPassword\": \"123456\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "dfce3cdf-568f-40ed-bdcb-16c05b47e4fb",
+            "colId": "910cf891-f144-4c9f-8895-4442cdbd970e",
+            "containerId": "3404f000-8666-4f9d-942d-8cf1cc658f99",
+            "name": "Get Me",
+            "url": "http://localhost:7000/api/v1/users/me/",
+            "method": "GET",
+            "sortNum": 400000,
+            "created": "2023-12-23T19:05:41.415Z",
+            "modified": "2023-12-23T19:15:51.071Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJBLTAwMDEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MDMzNTgzNjIsImV4cCI6MTcwMzM1ODk2Mn0.iVMQjD9vvY2o0LzvAvF_OV7UVTbo2Ai2ro0XKy4VOs4"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "8df13f29-13fc-43b0-9140-f53f1a49ca88",
+            "colId": "910cf891-f144-4c9f-8895-4442cdbd970e",
+            "containerId": "3404f000-8666-4f9d-942d-8cf1cc658f99",
+            "name": "Update User Status",
+            "url": "http://localhost:7000/api/v1/users/change-status/6585e19daa45f02c0ef12680",
+            "method": "PATCH",
+            "sortNum": 410000,
+            "created": "2023-12-23T19:34:55.698Z",
+            "modified": "2023-12-23T19:50:15.533Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJBLTAwMDEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MDMzNjA3MjAsImV4cCI6MTcwMzM2MTMyMH0.Q3lzC1OhnlxRuAxIVd8mrflrpohpFVmf0Ru813rlYVc"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"status\": \"in-progress\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "a3f4a3fa-3513-4683-b339-25ad1b6acb06",
+            "colId": "910cf891-f144-4c9f-8895-4442cdbd970e",
+            "containerId": "04cb3e57-f2c9-4fa1-9c45-9b407326d909",
+            "name": "Create Enrolled Into Courses",
+            "url": "{{ph-local-url}}/enrolled-courses/create-enrolled-course",
+            "method": "POST",
+            "sortNum": 420000,
+            "created": "2023-12-24T18:20:54.223Z",
+            "modified": "2024-02-02T19:39:32.135Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIyMDI0MDEwMDAxIiwicm9sZSI6InN0dWRlbnQiLCJpYXQiOjE3MDY5MDAzOTQsImV4cCI6MTcwNjk4Njc5NH0.d1dzYeF6-S1WrutrUgzBHThS4ztkfSU4wzM8lNLTuN4"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"offeredCourse\": \"65bc1506dfbfc36004617823\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "00c8c728-03ff-4072-b811-418c1870115f",
+            "colId": "910cf891-f144-4c9f-8895-4442cdbd970e",
+            "containerId": "04cb3e57-f2c9-4fa1-9c45-9b407326d909",
+            "name": "Update Matks Into Enrolled Courses",
+            "url": "{{ph-local-url}}/enrolled-courses/update-enrolled-course-marks",
+            "method": "PATCH",
+            "sortNum": 430000,
+            "created": "2023-12-25T10:45:23.495Z",
+            "modified": "2024-02-02T20:31:18.623Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJGLTAwMDEiLCJyb2xlIjoiZmFjdWx0eSIsImlhdCI6MTcwNjkwNTM0NywiZXhwIjoxNzA2OTkxNzQ3fQ.DCLSlQPf-w3k3Ti-YQcD6OilG8vMFSaL-yA8XUuv3MQ"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"semesterRegistration\":\"65bbf418896fa66fc299ef59\",\n  \"offeredCourse\": \"65bc1506dfbfc36004617823\",\n  \"student\": \"65b954416ebdedee72453b22\",\n  \"courseMarks\": {\n    \"classTest1\": 10,\n    \"midTerm\": 30,\n    \"classTest2\": 10,\n    \"finalTerm\": 50\n    \n  }\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "a5d42431-307c-4bab-bd47-e391c994a45b",
+            "colId": "910cf891-f144-4c9f-8895-4442cdbd970e",
+            "containerId": "6a0f188f-ef75-482e-a6f7-ace41a4d7a8e",
+            "name": "Get My Offered Courses",
+            "url": "{{ph-local-url}}/offered-courses/my-offered-courses?page=1&limit=1",
+            "method": "GET",
+            "sortNum": 440000,
+            "created": "2024-02-02T18:59:01.598Z",
+            "modified": "2024-02-02T21:32:50.091Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIyMDI0MDEwMDAxIiwicm9sZSI6InN0dWRlbnQiLCJpYXQiOjE3MDY5MDAzOTQsImV4cCI6MTcwNjk4Njc5NH0.d1dzYeF6-S1WrutrUgzBHThS4ztkfSU4wzM8lNLTuN4"
+                }
+            ],
+            "params": [
+                {
+                    "name": "page",
+                    "value": "1",
+                    "isPath": false
+                },
+                {
+                    "name": "limit",
+                    "value": "1",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        }
+    ],
+    "settings": {
+        "envId": "954ae107-cfeb-4b64-8666-38c4524004f6"
+    }
+}
